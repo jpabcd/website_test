@@ -2,43 +2,31 @@
 <html>
   <head>
     <title>Jovian careears</title>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <style>
-      h1{font-size:40px;
-         font-family:Roboto;
-         font-weight:normal;
-          color:rgb(50,50,50);
-         text-align:center;}
-      #banner{width:100%;height:400;object-fit:cover;}
-      h2{
-        font-family:Roboto;
-        font-size:32px;
-        color:rgb(100,100,100);
-        font-weight:normal;
-        text-align:center;
-        }
-      .bodytext{
-        font-family:Roboto;
-        color: rgb(80, 80, 80);
-      }
-      #container{
-        max-width:720px;
-        margin:0 auto 0 auto;
-      }
+      #banner {height:320px;width:100%;}
     </style>
   </head>
   <body>
-    <div id='container'>
-      <h1>Jovian careers</h1>
-      <img id="banner"         
-      src='https://websitetest.jpabcd360.repl.co/static/premium_photo-1661632613351-        612b56224472.webp' height='160'>
-      <h2>About jovian</h2>
-      <p class='bodytext'>
+    <div class='container'>
+      <h1 class='text-center mt-2 mb-2'>{{company_name}} careers</h1>
+      <img class='img-fluid' id="banner"         
+      src='https://websitetest.jpabcd360.repl.co/static/banner.jpg' height='160'>
+      <h2 class='text-center mb-2'>About jovian</h2>
+      <p class='lead'>
   dsakdhasjkdhasjdakfgaskfashfkashkasdhaskjdhaskaskjfaskfhaskdhadhasjkd
       </p>
-      <h2>Open Positions</h2>
-      <p class='bodytext'>TODO-show the jobs here</p>
+      <h2 class='text-center mt-2'>Open Positions</h2>
+      <div>
+      {% for job in jobs %}
+        {%include 'jobitem.html'%}
+      {% endfor %}
+      </div>
       <div style='text-align:center;'>
-        <button>Contact Us</button>
+        <button class='btn btn-primary'>Contact Us</button>
         <p>Copyright 2022,Jovian</p>
       </div>
     </div>
